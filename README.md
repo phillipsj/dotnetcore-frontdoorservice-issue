@@ -61,3 +61,19 @@ Looks like the *X-Forward-Host* header is missing from the request.
 
 We are not seeing our IP address coming from Front Door, nor are we seeing the X-Forward-Host header like the docs say should be there.
 
+## Clearing KnownNetworks and KnownProxies
+
+I added the following to see this is causing the issue. The default behavior outlineded [here](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-2.2#forwarded-headers)
+say these are set to loopback.
+
+This is bad security, but I wanted to see if it will work.
+
+It does work, see the *X-Original-* headers are populated and the host name on the app is reporting as the Front Door.
+
+However, the values are not what are expected.
+
+```
+X-Original-For: <Internal Front Door IP, not my client IP>
+```
+
+

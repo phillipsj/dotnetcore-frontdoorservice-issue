@@ -43,6 +43,9 @@ namespace dotnetcore_frontdoorservice_issue
             {
                 options.ForwardedHeaders = 
                     ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost;
+                
+                options.KnownNetworks.Clear();
+                options.KnownProxies.Clear();
             });
 
             services.AddHttpContextAccessor();
