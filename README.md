@@ -61,7 +61,7 @@ Looks like the *X-Forward-Host* header is missing from the request.
 
 We are not seeing our IP address coming from Front Door, nor are we seeing the X-Forward-Host header like the docs say should be there.
 
-## Clearing KnownNetworks and KnownProxies
+## Step 1: Clearing KnownNetworks and KnownProxies
 
 I added the following to see this is causing the issue. The default behavior outlineded [here](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-2.2#forwarded-headers)
 say these are set to loopback.
@@ -76,4 +76,10 @@ However, the values are not what are expected.
 X-Original-For: <Internal Front Door IP, not my client IP>
 ```
 
+
+## Step 2: Increasing Forward Limit
+
+Hmm, I am going to try to increase the Forward Limit to see if this fixes the Client IP being report.
+
+This change didn't have any affect on the IP.
 

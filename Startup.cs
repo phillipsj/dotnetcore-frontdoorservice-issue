@@ -46,6 +46,7 @@ namespace dotnetcore_frontdoorservice_issue
                 
                 options.KnownNetworks.Clear();
                 options.KnownProxies.Clear();
+                options.ForwardLimit = 2;
             });
 
             services.AddHttpContextAccessor();
