@@ -83,3 +83,11 @@ Hmm, I am going to try to increase the Forward Limit to see if this fixes the Cl
 
 This change didn't have any affect on the IP.
 
+
+## Step 3: Adding Known Hosts
+
+Going to add Known Hosts to increase security. Just grab the FQDN of the Front Door and put in the Startup.cs file where the options are initialized.
+
+Everything still works.
+
+
