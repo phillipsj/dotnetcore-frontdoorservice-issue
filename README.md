@@ -90,4 +90,8 @@ Going to add Known Hosts to increase security. Just grab the FQDN of the Front D
 
 Everything still works.
 
+## Outstanding Issues
 
+Clearing KnownProxies and KnownNetworks is a security issue, how are these supposed to be populated for use with Front Door service to secure the traffic to it as a Proxy?
+
+Why am I not seeing the X-Forward-For displaying the correct client ip address?
