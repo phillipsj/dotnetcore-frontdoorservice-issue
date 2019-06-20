@@ -1,0 +1,1 @@
+az webapp up --name fds-issue --sku B1
