@@ -46,7 +46,6 @@ namespace dotnetcore_frontdoorservice_issue
                 
                 options.KnownNetworks.Clear();
                 options.KnownProxies.Clear();
-                options.ForwardLimit = 2;
                 
                 // Put your front door FQDN here
                 options.AllowedHosts = new List<string>() { "fdissue.azurefd.net" };

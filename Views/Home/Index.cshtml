@@ -5,4 +5,14 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Host name is: @ViewData["HostName"]</p>
+    <ul>
+        <li>Request Method: @ViewData["Method"]"</li>
+        <li>Request Scheme: @ViewData["Scheme"]"</li>
+        <li>Request Path: @ViewData["Path"]"</li>
+        @foreach (var (key, value) in ViewData["Headers"] as Dictionary<string, string>)
+        {
+            <li>Header: @key: @value</li>
+        }
+        <li>Request RemoteIp: @ViewData["RemoteIp"]"</li>
+    </ul>
 </div>
